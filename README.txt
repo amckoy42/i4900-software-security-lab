@@ -184,3 +184,18 @@ that I specify. I do not have to touch any stack canaries to get to the memory t
 Unfortunately, I was unable to figure out how to manipulate the value that gets written by %n
 and overwrite the return address to the address that I want it to, so I was unable to complete that
 part of this lab.
+
+
+Part III:
+For this part, my interpretation of the goal was to use the random byte as the index of an array
+that I had to access. My hypothesis was that for higher indices of the array, it would take slightly
+longer to access. I was hoping that some differences in access time would appear in either of my
+timeTest programs, but there does not seem to be a correlation.
+
+In both programs, I created an integer array 'a' and generated a random number 'n'. I used two different
+timing methods to measure the time it would take to set a[n] to 10.
+
+Without adding sleep(1), there is
+almost no difference in time at all, no matter how large the array is or how far apart two different
+indices are. After adding sleep(1), there is more variance in the times, but they do not seem
+to correspond at all to the value of the random number.
